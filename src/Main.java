@@ -29,21 +29,21 @@ public class Main {
     //     if s(A) <= s(A*) then
     //         A* = A
 
-    static final int TOTAL_PROBLEM_INSTANCES = 1;
+    static final int TOTAL_PROBLEM_INSTANCES = 5;
 
     public static void main(String[] args) {
         System.out.println("\n***************************************************************************");
         System.out.println("One-Dimensional Bin Packing Problem");
         System.out.println("Minimum Bin Slack Algorithm");
 
-        System.out.println("***************************************************************************");
-        System.out.println("Getting problem instances");
-        System.out.println("***************************************************************************\n");
-
         //problemArray stores all 5 problem instances
         ProblemInstance[] problemArray = ReadFile.readFile();
         //iterate through problem array and display the problem instances
         for (int problem = 0 ; problem < TOTAL_PROBLEM_INSTANCES; problem++){
+
+            System.out.println("\n***************************************************************************");
+            System.out.println("Generating Solution for "+problemArray[problem].problemInstanceName);
+            System.out.println("***************************************************************************\n");
 
             problemArray[problem].printInfo();
             problemArray[problem].generateItemList();
@@ -60,23 +60,23 @@ public class Main {
                 descendingItems.add(element);
             }
 
-
-
             System.out.println("Copy Descending Order Item List: " + descendingItems+ "\n");
-
-            System.out.println("***************************************************************************");
-            System.out.println("Generating Solution for "+problemArray[problem].problemInstanceName);
-            System.out.println("***************************************************************************\n");
 
             // create instance of solution and call pack(descendingItems)
             SolutionMBS sol = new SolutionMBS(numberOfItems,descendingItems);
 //            ArrayList<Bin> binList = new ArrayList<>();
             System.out.println("Copy Descending Order Item List 2: " + descendingItems+ "\n");
             ArrayList<Bin> binList = sol.performBinPacking();
-            System.out.println("Problem Instance "+(problem+1)+" Bin Packing Solution:");
+
+            System.out.println("\n***************************************************************************");
+
+            System.out.println("Problem Instance "+problemArray[problem].problemInstanceName+" Bin Packing Solution:");
+            System.out.println("Number of bins: "+binList.size());
             for (Bin bin : binList){
                 bin.printBinContents();
             }
+
+            System.out.println("***************************************************************************\n");
         }
 
     }

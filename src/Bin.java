@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Bin {
-    public static int BIN_FULL_CAPACITY = 60;
+    public static int BIN_FULL_CAPACITY = 10000;
     public int remainingCapacity;
     public ArrayList<Integer> itemsInBin = new ArrayList<>();
 
@@ -13,7 +13,7 @@ public class Bin {
     public void addToBin(int itemWeight){
         this.itemsInBin.add(itemWeight);
         this.remainingCapacity -= itemWeight;
-        System.out.println("remaining capacity: "+this.remainingCapacity);
+//        System.out.println("remaining capacity: "+this.remainingCapacity);
     }
 
     public int getRemainingCapacity(){
@@ -21,7 +21,7 @@ public class Bin {
     }
 
     public void printBinContents(){
-        System.out.println(itemsInBin);
+        System.out.println(this.itemsInBin + " Occupied capacity: " + getSum() + " Slack: "+this.remainingCapacity);
     }
 
     public void removeAllItem(int item) {
@@ -38,5 +38,12 @@ public class Bin {
 
     public int getItem(int index) {
         return itemsInBin.get(index);
+    }
+    public int getSum(){
+        int sum = 0;
+        for (int element : itemsInBin){
+            sum+=element;
+        }
+        return sum;
     }
 }

@@ -4,7 +4,7 @@ import java.util.Collections;
 public class SolutionMBS {
     public ArrayList<Integer> Z = new ArrayList<>();
     public int n;
-    public int BIN_CAPACITY = 60;
+    public int BIN_CAPACITY = 10000;
     public Bin packedBin;
     ArrayList<Bin> binList;
     Bin bin;
@@ -43,14 +43,14 @@ public class SolutionMBS {
 
     private void MBS(int q){
         for (int r = q; r < n; r ++){
-            System.out.println("Iteration q: " + q + " number of items: "+ n);
+//            System.out.println("Iteration q: " + q + " number of items: "+ n);
             int item = Z.get(r);
-            System.out.println("item: " + item);
-            System.out.println("slack: " + packedBin.getRemainingCapacity());
-            System.out.println("slack: " + optimallyPackedBin.getRemainingCapacity());
+//            System.out.println("item: " + item);
+//            System.out.println("slack: " + packedBin.getRemainingCapacity());
+//            System.out.println("slack: " + optimallyPackedBin.getRemainingCapacity());
             if (item <= getSlack(packedBin)){
                 packedBin.addToBin(item);
-                System.out.println("packedBin: "+ packedBin);
+//                System.out.println("packedBin: "+ packedBin);
                 MBS(r+1);
 //                System.out.println("begin recursive stack processing");
                 packedBin.removeAllItem(item);
@@ -63,12 +63,11 @@ public class SolutionMBS {
         if (getSlack(packedBin) < getSlack(optimallyPackedBin)){
 //            System.out.println("packedBin slack better than optimal");
             //making deep copy of packed bin into optimally packed bin
-            optimallyPackedBin.emptyBin();
+//            optimallyPackedBin.emptyBin();
             for (int index=0; index < packedBin.size(); index++) {
                 optimallyPackedBin.addToBin(packedBin.getItem(index));
             }
             packedBin.emptyBin();
-//            packedBin = new Bin();
         }
     }
 
@@ -76,11 +75,13 @@ public class SolutionMBS {
         binList = new ArrayList<>();
         // check if itemlist is not empty
         while (!Z.isEmpty()){
-            packedBin.remainingCapacity = BIN_CAPACITY;
-            optimallyPackedBin.remainingCapacity = BIN_CAPACITY;
-            System.out.println("Z (descending items): "+Z);
+//            packedBin.remainingCapacity = BIN_CAPACITY;
+//            optimallyPackedBin.remainingCapacity = BIN_CAPACITY;
+            packedBin = new Bin();
+            optimallyPackedBin = new Bin();
+//            System.out.println("Z (descending items): "+Z);
             bin = new Bin();
-            slack = bin.remainingCapacity;
+            slack = bin.getRemainingCapacity();
             //call mbs
             MBS(0);
             //assign bin with optimally packed bin
@@ -89,13 +90,12 @@ public class SolutionMBS {
             }
             //append bin to bin array
             binList.add(bin);
-            bin.printBinContents();
+//            bin.printBinContents();
             for (Integer weight : bin.itemsInBin){
-                System.out.println("removing "+weight+" from Z");
-                Z.removeAll(Collections.singleton(weight));
+//                System.out.println("removing "+weight+" from Z");
+                Z.remove(weight);
             }
             n = Z.size();
-            optimallyPackedBin.remainingCapacity = BIN_CAPACITY;
         }
         // exits loop when itemlist is empty meaning all bins are packed
         return binList;

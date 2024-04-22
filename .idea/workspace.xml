@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="Read from BPP.txt and display all problem instances">
-      <change afterPath="$PROJECT_DIR$/src/BPP_Test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SolutionMBS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProblemInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProblemInstance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SolutionMBS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SolutionMBS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +71,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713108439084</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Read from BPP.txt and display all problem instances">
+      <option name="closed" value="true" />
+      <created>1713772894852</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713772894852</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
