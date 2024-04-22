@@ -1,46 +1,42 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Bin {
-    public static int BIN_FULL_CAPACITY = 10000;
-    public int currentCapacity;
+    public static int BIN_FULL_CAPACITY = 60;
+    public int remainingCapacity;
     public ArrayList<Integer> itemsInBin = new ArrayList<>();
 
     public Bin(){
-        this.currentCapacity = 0;
+        this.remainingCapacity = BIN_FULL_CAPACITY;
     }
 
-    // Pseudocode
-    // call MBS(1)
-    // function MBS(q)
-    //     for r = q to n'
-    //         i = Z'[r]
-    //         if weighti <= s(A) then
-    //             A = A U {i}
-    //             Apply MBS(r+1)
-    //             A = A \ {i}
-    //             if s(A*) = 0 then
-    //                 end
-    //     if s(A) <= s(A*) then
-    //         A* = A
+    public void addToBin(int itemWeight){
+        this.itemsInBin.add(itemWeight);
+        this.remainingCapacity -= itemWeight;
+        System.out.println("remaining capacity: "+this.remainingCapacity);
+    }
 
-
-
-//    public boolean addToBin(int item){
-//        int futureCapacity = this.currentCapacity + item;
-//        if (futureCapacity < BIN_FULL_CAPACITY) {
-//            this.itemsInBin.add(item);
-//            this.currentCapacity = futureCapacity;
-//            return true;
-//        }else{
-//            return false;
-//        }
-//    }
-
-
-
-
+    public int getRemainingCapacity(){
+        return remainingCapacity;
+    }
 
     public void printBinContents(){
-        System.out.print(itemsInBin);
+        System.out.println(itemsInBin);
+    }
+
+    public void removeAllItem(int item) {
+        itemsInBin.removeAll(Collections.singleton(item));
+    }
+
+    public void emptyBin() {
+        itemsInBin.clear();
+    }
+
+    public int size() {
+        return itemsInBin.size();
+    }
+
+    public int getItem(int index) {
+        return itemsInBin.get(index);
     }
 }

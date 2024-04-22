@@ -32,9 +32,8 @@ public class ProblemInstance {
                 itemList.add(itemWeight[i]);
             }
         }
+        System.out.println("Item List: "+ itemList);
     }
-
-
 
     // sorting the list of items in descending order
     public void sortItemListDescending() {

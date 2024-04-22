@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
     // Notation
     // | Code             | Notation     | Description
-    // | numberOfBins     | n            | Number of items
+    // | noOfItems        | n            | Number of items
     // | binCapacity      | c            | Bin capacity
     // | optimalNoOfBins  | opt          | Number of bins in the optimal solution
     // | itemWeight       | wi           | Weight of the item i (i=1,...,n)
@@ -29,7 +29,7 @@ public class Main {
     //     if s(A) <= s(A*) then
     //         A* = A
 
-    static final int TOTAL_PROBLEM_INSTANCES = 5;
+    static final int TOTAL_PROBLEM_INSTANCES = 1;
 
     public static void main(String[] args) {
         System.out.println("\n***************************************************************************");
@@ -49,25 +49,34 @@ public class Main {
             problemArray[problem].generateItemList();
 
             ArrayList<Integer> itemList = problemArray[problem].itemList;
-            System.out.println("Item List: " + itemList);
             problemArray[problem].sortItemListDescending();
             System.out.println("Descending Order Item List: " + itemList);
-
 
             int numberOfItems = itemList.toArray().length;
 
             //get copy of descending order list
-            ArrayList<Integer> copyList = new ArrayList<>(numberOfItems);
+            ArrayList<Integer> descendingItems = new ArrayList<>(numberOfItems);
             for (Integer element : itemList) {
-                copyList.add(element);
+                descendingItems.add(element);
             }
 
-            System.out.println("Copy Descending Order Item List: " + itemList+ "\n");
 
+
+            System.out.println("Copy Descending Order Item List: " + descendingItems+ "\n");
+
+            System.out.println("***************************************************************************");
+            System.out.println("Generating Solution for "+problemArray[problem].problemInstanceName);
             System.out.println("***************************************************************************\n");
 
-
-
+            // create instance of solution and call pack(descendingItems)
+            SolutionMBS sol = new SolutionMBS(numberOfItems,descendingItems);
+//            ArrayList<Bin> binList = new ArrayList<>();
+            System.out.println("Copy Descending Order Item List 2: " + descendingItems+ "\n");
+            ArrayList<Bin> binList = sol.performBinPacking();
+            System.out.println("Problem Instance "+(problem+1)+" Bin Packing Solution:");
+            for (Bin bin : binList){
+                bin.printBinContents();
+            }
         }
 
     }

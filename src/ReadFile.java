@@ -12,7 +12,7 @@ public class ReadFile {
     public static ProblemInstance[] readFile() {
         ProblemInstance[] problemArray = new ProblemInstance[5];
         int problemInstanceNumber = -1;
-        InputStream problemInstancesFile = ReadFile.class.getResourceAsStream("/BPP.txt");
+        InputStream problemInstancesFile = ReadFile.class.getResourceAsStream("/BPP_Test.txt");
         Scanner myReader = new Scanner(problemInstancesFile);
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
