@@ -61,8 +61,10 @@ public class Main extends ReadFile {
 
             //solutionResult will include the bins and number of bins for a particular bin packing solution
           //this will be returned by the solve() method of the BinPackingACO class
+            long startTime = System.nanoTime();
             SolutionResult solutionResult = aco.solve(0.50);
-
+            long endTime = System.nanoTime();
+            long executionTime = endTime - startTime;
           //getting the number of bins computed by the ACO bin packing algorithm, this data is stored as an instance of the SolutionResult class which contains properties such as the number of bins, and the contents of the bins
             int numberOfBins = solutionResult.getNumberOfBins();
           //the bins themselves are stored as an ArrayList within the solutionResult object
@@ -71,7 +73,7 @@ public class Main extends ReadFile {
           //prinitng the solution for this paticular problem instance along with addtional data such as the occupeid capacity per bin
            System.out.print("Problem Instance " + problem.problemInstanceName + " Bin Packing Solution:\nNumber of bins: "+ numberOfBins+"\n");
 
-          //prinitng the contents of each bin by looping through the contents of each bin
+          //printng the contents of each bin by looping through the contents of each bin
           for (int i = 0; i < bins.size(); i++) {
               ArrayList<Integer> binContents = bins.get(i);
               //Print contents of the bin
@@ -82,10 +84,10 @@ public class Main extends ReadFile {
                 capacityOccupied += weight;
               }
             //printing the total capacity occupied by the items in each bin
-              System.out.print(" Occupied Capacity: " + capacityOccupied+"/"+problem.binCapacity);
-              System.out.print("\n");
+              System.out.println(" Occupied Capacity: " + capacityOccupied+"/"+problem.binCapacity);
+
           }
-          
+            System.out.println("Time taken for packing: " + executionTime + " nanoseconds.\n");
            
 
           //end of problemInstance for loop

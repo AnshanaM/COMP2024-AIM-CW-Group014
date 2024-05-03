@@ -384,7 +384,7 @@ public class SimulatedAnnealingSolver {
         String desktopPath = userHomeFolder + "\\Desktop\\"; // Path to Desktop
 //        String csvFileName = "simulated_annealing_results.csv"; // The name of the CSV file
 //        String csvFilePath = desktopPath + csvFileName;
-        String csvFilePath = "src/SA/simulated_annealing_results.csv";
+//        String csvFilePath = "src/SA/simulated_annealing_results.csv";
         int problemIndex = 1; // Start with 1 for naming files distinctly
 
         int instance = 1;
@@ -409,7 +409,7 @@ public class SimulatedAnnealingSolver {
                 solver.improvementFlag = false; // Initialize improvement flag
                 solver.noImprovementCount = 0;
 
-                long startTime = System.currentTimeMillis();
+                long startTime = System.nanoTime();
                 // Now perform simulated annealing with swap and evaluate steps
                 while (solver.temperature > solver.finalTemperature) {
                     solver.improvementFlag = false; // Reset flag for each temperature level
@@ -445,7 +445,7 @@ public class SimulatedAnnealingSolver {
                     tempCount = 0;
                 }
 
-                long endTime = System.currentTimeMillis(); // Record end time
+                long endTime = System.nanoTime(); // Record end time
                 long executionTime = endTime - startTime;
                 // Final solution
                 System.out.println("\nFinal Solution:");
@@ -457,7 +457,7 @@ public class SimulatedAnnealingSolver {
 //                solver.writeDataToCSV(csvFilePath, problemIndex);
                 problemIndex++;
 
-                System.out.println("Time taken for algorithm execution: " + executionTime + " milliseconds.");
+                System.out.println("Time taken for algorithm execution: " + executionTime + " nanoseconds.");
                 System.out.println("--------------------------------------------------------------------------------------------------\n");
                 instance++;
             }

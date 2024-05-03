@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="added and checked ACO">
+    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="renamed main folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ACO/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ACO/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BPP_Test.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GGACGT/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GGACGT/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MBS/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MBS/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" afterDir="false" />
@@ -37,38 +38,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.MBS.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SimulatedAnnealingSolver.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ansha/IdeaProjects/COMP2024-CW-MBS/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.MBS.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.SimulatedAnnealingSolver.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ansha/IdeaProjects/COMP2024-CW",
+    "onboarding.tips.debug.path": "C:/Users/ansha/IdeaProjects/COMP2024-CW-MBS/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="COMP2024-CW" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="COMP2024-CW" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -125,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714732082475</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="renamed main folder">
+      <option name="closed" value="true" />
+      <created>1714733340031</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714733340031</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +139,7 @@
     <MESSAGE value="Read from BPP.txt and display all problem instances" />
     <MESSAGE value="added and checked SA and GGA-CGT" />
     <MESSAGE value="added and checked ACO" />
-    <option name="LAST_COMMIT_MESSAGE" value="added and checked ACO" />
+    <MESSAGE value="renamed main folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed main folder" />
   </component>
 </project>

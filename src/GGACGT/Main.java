@@ -61,6 +61,7 @@ public class Main {
             problemArray[instance].printInfo();
             System.out.println("-----------------------------------------------------------");
 
+            long startTime = System.nanoTime();
             // calculate lower bound for solution's number of bins
             int lowerBound = lowerBoundCalculator.lowerBound(problemArray[instance].allItemsOrderedList);
 
@@ -369,8 +370,12 @@ public class Main {
                 childIDs.clear();
                 cloned_Elite_Individuals.clear();
             }
+            long endTime = System.nanoTime();
+            long executionTime = endTime - startTime;
+
             System.out.println("Final Best Solution for instance "+(instance+1)+": ");
             best_Solution.printSolutionInfo();
+            System.out.println("Time taken for packing: " + executionTime + " nanoseconds.");
         }
     }
 }

@@ -57,7 +57,12 @@ public class Main {
             SolutionMBS sol = new SolutionMBS(numberOfItems,descendingItems);
 //            ArrayList<Bin> binList = new ArrayList<>();
             System.out.println("Copy Descending Order Item List 2: " + descendingItems+ "\n");
+//            long startTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
             ArrayList<Bin> binList = sol.performBinPacking();
+//            long endTime = System.currentTimeMillis();
+            long endTime = System.nanoTime();
+            long executionTime = endTime - startTime;
 
             System.out.println("\n***************************************************************************");
 
@@ -66,7 +71,7 @@ public class Main {
             for (Bin bin : binList){
                 bin.printBinContents();
             }
-
+            System.out.println("Time taken for packing: " + executionTime + " nanoseconds.");
             System.out.println("***************************************************************************\n");
         }
 
