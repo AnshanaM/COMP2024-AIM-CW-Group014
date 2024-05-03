@@ -4,38 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="Read from BPP.txt and display all problem instances">
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/Bin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/FFnHeuristic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/ReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/SolutionComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/WF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/adaptiveMutationOperatorAndRP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/crossOverOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/csvWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/lowerBoundCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/nextFitHeuristic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/problemInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GGACGT/worstFitHeuristic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MBS/Bin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MBS/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MBS/ProblemInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MBS/ReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MBS/SolutionMBS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SA/Bin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SA/InitialSolutionGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SA/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SA/ReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SA/problemInstance.java" afterDir="false" />
+    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="added and checked SA and GGA-CGT">
+      <change afterPath="$PROJECT_DIR$/src/ACO/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ACO/ReadFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ACO/problemInstance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProblemInstance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReadFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SolutionMBS.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,23 +36,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.MBS.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.SimulatedAnnealingSolver.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/ansha/IdeaProjects/COMP2024-CW-MBS/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.MBS.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimulatedAnnealingSolver.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ansha/IdeaProjects/COMP2024-CW-MBS/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -120,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713785530176</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added and checked SA and GGA-CGT">
+      <option name="closed" value="true" />
+      <created>1714726879707</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714726879708</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +118,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Read from BPP.txt and display all problem instances" />
-    <option name="LAST_COMMIT_MESSAGE" value="Read from BPP.txt and display all problem instances" />
+    <MESSAGE value="added and checked SA and GGA-CGT" />
+    <option name="LAST_COMMIT_MESSAGE" value="added and checked SA and GGA-CGT" />
   </component>
 </project>
