@@ -1,3 +1,5 @@
+package MBS;
+
 import java.io.InputStream;
 import java.util.Scanner;
 

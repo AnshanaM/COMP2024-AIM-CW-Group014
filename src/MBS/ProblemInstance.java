@@ -1,3 +1,5 @@
+package MBS;
+
 import java.util.*;
 
 public class ProblemInstance {
