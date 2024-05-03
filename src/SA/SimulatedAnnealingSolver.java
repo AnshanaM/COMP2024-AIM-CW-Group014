@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/** Java Implementation of SA (Simulated Annealing) algorithm for solving the 1D BPP (Bin Packing Problem)
+ * @author  Aravindh Palaniguru */
+
 public class SimulatedAnnealingSolver {
     private List<Bin> bins;
     private List<List<Item>> sets;

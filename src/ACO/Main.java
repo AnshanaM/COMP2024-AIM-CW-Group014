@@ -1,5 +1,4 @@
 package ACO;
-//import statements to import relevant modules
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -14,8 +13,8 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
-//this code implements the Ant Colony Optimisation Algorithm to solve one dimensional bin packing problems. The dataset containing the problem instances can be found in BPP.txt
+/** Java Implementation of ACO (Ant Colony Optimization) algorithm for solving the 1D BPP (Bin Packing Problem)
+ * @author  Varsagasorraj A/L Vasagarajan */
 
 
 //the main class

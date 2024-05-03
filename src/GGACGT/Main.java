@@ -2,10 +2,9 @@ package GGACGT;
 import java.lang.reflect.Array;
 import java.util.*;
 
-/**Java Implementation of GGA-CGT (Grouping Genetic Algorithm with Controlled Gene Transmission)
- * Link to referenced paper: Quiroz-Castellanos, M., Cruz-Reyes, L., Torres-Jimenez, J., Gómez, C., Huacuja, H. J. F., & Alvim, A. C. (2015).
- * A grouping genetic algorithm with controlled gene transmission for the bin packing problem. Computers & Operations Research, 55, 52-64.
+/**Java Implementation of GGA-CGT (Grouping Genetic Algorithm with Controlled Gene Transmission) algorithm for solving the 1D BPP (Bin Packing Problem)
  * @author Anshali Manoharan */
+
 public class Main {
     public static void main(String[] args) {
 

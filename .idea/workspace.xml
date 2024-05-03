@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="added and checked SA and GGA-CGT">
-      <change afterPath="$PROJECT_DIR$/src/ACO/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ACO/ReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ACO/problemInstance.java" afterDir="false" />
+    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="added and checked ACO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ACO/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ACO/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GGACGT/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GGACGT/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MBS/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MBS/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714726879708</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added and checked ACO">
+      <option name="closed" value="true" />
+      <created>1714732082474</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714732082475</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +128,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Read from BPP.txt and display all problem instances" />
     <MESSAGE value="added and checked SA and GGA-CGT" />
-    <option name="LAST_COMMIT_MESSAGE" value="added and checked SA and GGA-CGT" />
+    <MESSAGE value="added and checked ACO" />
+    <option name="LAST_COMMIT_MESSAGE" value="added and checked ACO" />
   </component>
 </project>

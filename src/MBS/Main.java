@@ -2,21 +2,10 @@ package MBS;
 
 import java.util.ArrayList;
 
-public class Main {
-    // Notation
-    // | Code             | Notation     | Description
-    // | noOfItems        | n            | Number of items
-    // | binCapacity      | c            | Bin capacity
-    // | optimalNoOfBins  | opt          | Number of bins in the optimal solution
-    // | itemWeight       | wi           | Weight of the item i (i=1,...,n)
-    // | binWeight        | l(j)         | Accumulated weight of bin j
-    // | descendingItems  | Z            | List of items sorted in decreasing order according to itemWeight
-    // | solution         | Sol          | Solution i.e.,complete assignment of items to bins
-    // | numberOfBins     | m            | Number of bins in the solution
-    // | slack            | s(j)         | Free space/slack in the bin i.e., c - l(j)
-    // | setOfItemsN      | N            | Set of n items
-    // | setOfWeightsN    | W            | set of n weights
+/** Java Implementation of MBS (Minimum Bin Slack) algorithm for solving the 1D BPP (Bin Packing Problem)
+ * @author  Anshana Manoharan */
 
+public class Main {
     // Pseudocode
     // call MBS(1)
     // function MBS(q)
