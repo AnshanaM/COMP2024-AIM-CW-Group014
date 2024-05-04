@@ -22,8 +22,9 @@ public class Bin {
         return remainingCapacity;
     }
 
-    public void printBinContents(){
+    public int printBinContents(){
         System.out.println(this.itemsInBin + " Occupied capacity: " + getSum() + " Slack: "+this.remainingCapacity);
+        return getSum();
     }
 
     public void removeAllItem(int item) {

@@ -68,9 +68,12 @@ public class Main {
 
             System.out.println("Problem Instance "+problemArray[problem].problemInstanceName+" Bin Packing Solution:");
             System.out.println("Number of bins: "+binList.size());
+            double sum  = 0.0;
             for (Bin bin : binList){
-                bin.printBinContents();
+                int occupiedCapacity = bin.printBinContents();
+                sum += Math.pow(((double) occupiedCapacity/10000),2);
             }
+            System.out.println("Cost function: " + (sum/binList.size()));
             System.out.println("Time taken for packing: " + executionTime + " nanoseconds.");
             System.out.println("***************************************************************************\n");
         }

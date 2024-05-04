@@ -1,4 +1,5 @@
 package ACO;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -27,7 +28,7 @@ public class Main extends ReadFile {
 
 
     //main function (program entry point)
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //printing the max iteration count
         System.out.print("\nMax Iterations: " + MAX_ITERATIONS + "\n");
 
@@ -35,65 +36,90 @@ public class Main extends ReadFile {
         //the system that reads the dataset and processes the data is present in the ReadFile class
         problemInstance[] problemArray = readFile();
 
+//        String filePath = "outputRuns.txt";
+//        FileWriter writer = new FileWriter(filePath);
+//        ArrayList binRuns = new ArrayList();
+
+        double averageCost = 0;
+
         //looping through every problem instance in our Problem Array
         //essentially a forEach loop
         for (problemInstance problem : problemArray) {
-            //defining a 2 dimensional integer array named items, will be used to store (item weight, number of items) pairs
-          //{{w1,#w1},{w2,#w2},...}
-            int[][] items = new int[problem.numberOfItemWeights][2];
-            for (int j = 0; j < problem.numberOfItemWeights; j++) {
-              //assigning the weight and number of items to an array, this array is then an element of the items array
-              //items is essentially an array of arrays
-                items[j][0] = problem.itemWeight[j];
-                items[j][1] = problem.noOfItems[j];
-            }
 
-          //creating a new instance of the BinPackingACO class named aco. This is the class responsible for a majority for the bin packing logic
-          //the constructor of the BinPackingACO class takes necessary relevant arguments to solve the bin packing problem, including the number of item weights, bin capacity, and an array containing weight, number of item pairs.
-          //it's also necessary to pass the problem instance name as an argument 
+            //running the following 30 times
+//            for (int run = 0; run < 30; run++) {
 
-          //essentially this process will be repeated for every problem Instacnce
+                //defining a 2 dimensional integer array named items, will be used to store (item weight, number of items) pairs
+                //{{w1,#w1},{w2,#w2},...}
+                int[][] items = new int[problem.numberOfItemWeights][2];
+                for (int j = 0; j < problem.numberOfItemWeights; j++) {
+                    //assigning the weight and number of items to an array, this array is then an element of the items array
+                    //items is essentially an array of arrays
+                    items[j][0] = problem.itemWeight[j];
+                    items[j][1] = problem.noOfItems[j];
+                }
 
-          //theres only one bin capacity defined per problem Instance as this is merely a one dimensional bin packing problem
-            BinPackingACO aco = new BinPackingACO(problem.problemInstanceName, problem.numberOfItemWeights,
-                    problem.binCapacity, items);
+                //creating a new instance of the BinPackingACO class named aco. This is the class responsible for a majority for the bin packing logic
+                //the constructor of the BinPackingACO class takes necessary relevant arguments to solve the bin packing problem, including the number of item weights, bin capacity, and an array containing weight, number of item pairs.
+                //it's also necessary to pass the problem instance name as an argument
+
+                //essentially this process will be repeated for every problem Instacnce
+
+                //theres only one bin capacity defined per problem Instance as this is merely a one dimensional bin packing problem
+                BinPackingACO aco = new BinPackingACO(problem.problemInstanceName, problem.numberOfItemWeights,
+                        problem.binCapacity, items);
 
 
-            //solutionResult will include the bins and number of bins for a particular bin packing solution
-          //this will be returned by the solve() method of the BinPackingACO class
-            long startTime = System.nanoTime();
-            SolutionResult solutionResult = aco.solve(0.50);
-            long endTime = System.nanoTime();
-            long executionTime = endTime - startTime;
-          //getting the number of bins computed by the ACO bin packing algorithm, this data is stored as an instance of the SolutionResult class which contains properties such as the number of bins, and the contents of the bins
-            int numberOfBins = solutionResult.getNumberOfBins();
-          //the bins themselves are stored as an ArrayList within the solutionResult object
-           ArrayList<ArrayList<Integer>> bins = solutionResult.getBins();
+                //solutionResult will include the bins and number of bins for a particular bin packing solution
+                //this will be returned by the solve() method of the BinPackingACO class
+                long startTime = System.nanoTime();
+                SolutionResult solutionResult = aco.solve(0.50);
+                long endTime = System.nanoTime();
+                long executionTime = endTime - startTime;
+                //getting the number of bins computed by the ACO bin packing algorithm, this data is stored as an instance of the SolutionResult class which contains properties such as the number of bins, and the contents of the bins
+                int numberOfBins = solutionResult.getNumberOfBins();
+                //the bins themselves are stored as an ArrayList within the solutionResult object
+                ArrayList<ArrayList<Integer>> bins = solutionResult.getBins();
 
-          //prinitng the solution for this paticular problem instance along with addtional data such as the occupeid capacity per bin
-           System.out.print("Problem Instance " + problem.problemInstanceName + " Bin Packing Solution:\nNumber of bins: "+ numberOfBins+"\n");
+                //prinitng the solution for this paticular problem instance along with addtional data such as the occupeid capacity per bin
+                System.out.print("Problem Instance " + problem.problemInstanceName + " Bin Packing Solution:\nNumber of bins: " + numberOfBins + "\n");
 
-          //printng the contents of each bin by looping through the contents of each bin
-          for (int i = 0; i < bins.size(); i++) {
-              ArrayList<Integer> binContents = bins.get(i);
-              //Print contents of the bin
-              System.out.print(binContents); 
-              //determining the total capacity occupied by a bin by cummulatively summing it's elements
-              int capacityOccupied = 0;
-              for (int weight : binContents) {
-                capacityOccupied += weight;
-              }
-            //printing the total capacity occupied by the items in each bin
-              System.out.println(" Occupied Capacity: " + capacityOccupied+"/"+problem.binCapacity);
+                double sum = 0.0;
+                //printng the contents of each bin by looping through the contents of each bin
+                for (int i = 0; i < bins.size(); i++) {
+                    ArrayList<Integer> binContents = bins.get(i);
+                    //Print contents of the bin
+                    System.out.print(binContents);
+                    //determining the total capacity occupied by a bin by cummulatively summing it's elements
+                    int capacityOccupied = 0;
+                    for (int weight : binContents) {
+                        capacityOccupied += weight;
+                    }
+                    //printing the total capacity occupied by the items in each bin
+                    System.out.println(" Occupied Capacity: " + capacityOccupied + "/" + problem.binCapacity);
+                    sum += Math.pow(((double) capacityOccupied/10000),2);
+                }
 
-          }
-            System.out.println("Time taken for packing: " + executionTime + " nanoseconds.\n");
-           
+                System.out.println("Cost function: " + (sum/bins.size()));
+                averageCost += (sum/bins.size());
 
+                System.out.println("Time taken for packing: " + executionTime + " nanoseconds.\n");
+                //adding to the problem instances bin array which stores the number of bins for 30 runs
+//                binRuns.add(numberOfBins);
+//            }
+            //printing 30 bin packings after 30 runs
+//            System.out.println("instance "+(problem.problemInstanceName)+binRuns);
+//            writer.write("instance "+(problem.problemInstanceName)+"\n"+binRuns + "\n");
+//            binRuns.clear();
           //end of problemInstance for loop
         }
+
+        System.out.println("Average Cost: "+(averageCost/5));
+
+//        writer.close();
       //end of main method
     }
+
 
    
 }

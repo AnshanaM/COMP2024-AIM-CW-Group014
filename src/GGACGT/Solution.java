@@ -81,7 +81,7 @@ public class Solution {
         }
         return -1; // Return -1 if item not found
     }
-    public void printSolutionInfo(){
+    public int printSolutionInfo(){
         System.out.printf("Solution ID: %d",this.solutionID);
         System.out.printf("\nRaw Solution: ");
         for (Bin bin : this.rawSolution) {
@@ -91,7 +91,7 @@ public class Solution {
         System.out.println("\nFitness Value: "+this.fitnessValue);
         System.out.println("Number Of Bins: "+this.numberOfBins);
         System.out.println("-----------------------------------------------------------");
-
+        return this.numberOfBins;
     }
     public static Comparator<Solution> ascendingOrderFitness = new Comparator<Solution>() {
         @Override

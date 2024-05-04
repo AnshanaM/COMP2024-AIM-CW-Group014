@@ -291,14 +291,18 @@ public class SimulatedAnnealingSolver {
         return copyBins;
     }
 
-    public void printBestSolution() {
+    public int printBestSolution() {
         System.out.println("Best Solution with objective value Z = " + zStar + ":");
+        double sum = 0.0;
         int binIndex = 1; // Start bin numbering at 1
         for (Bin bin : bestBins) {
             System.out.println("Bin " + binIndex + " (" + bin.currentLoad() + "/" + bin.getCapacity() + "):");
             printBinItems(bin);
             binIndex++;
+            sum += Math.pow(((double) bin.currentLoad()/10000),2);
         }
+        System.out.println("Cost function: " + (sum/bins.size()));
+        return binIndex;
     }
 
     // Helper method to print the items in a bin in a formatted manner
@@ -327,42 +331,6 @@ public class SimulatedAnnealingSolver {
 //            System.out.println("\n");
         }
     }
-    // Method within the SimulatedAnnealingSolver class
-//    public void writeDataToCSV(String csvFilePath, int problemIndex) {
-//        FileWriter fileWriter = null;
-//        boolean newFile = !(new File(csvFilePath).exists());
-//
-//        try {
-//            // The true argument here appends to the file if it already exists
-//            fileWriter = new FileWriter(csvFilePath, true);
-//
-//            // If the file didn't exist before, write the header
-//            if (newFile) {
-//                fileWriter.append("Problem_Index, Temperature, Z, ZStar, NumberOfBins\n");
-//            }
-//
-//            // Write each data point along with the problem index
-//            for (double[] dataPoint : dataPoints) {
-//                fileWriter.append(String.valueOf(problemIndex)).append(",");
-//                fileWriter.append(String.valueOf(dataPoint[0])).append(",");
-//                fileWriter.append(String.valueOf(dataPoint[1])).append(",");
-//                fileWriter.append(String.valueOf(dataPoint[2])).append(",");
-//                fileWriter.append(String.valueOf(dataPoint[3])).append("\n");
-//            }
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                if (fileWriter != null) {
-//                    fileWriter.flush();
-//                    fileWriter.close();
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
 
     public void printSolution() {
         int binNumber = 1;
@@ -378,7 +346,7 @@ public class SimulatedAnnealingSolver {
 //        System.out.println("Total weight of the problem instance: " + totalWeight);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         problemInstance[] problems = ReadFile.readFile();
         String userHomeFolder = System.getProperty("user.home");
         String desktopPath = userHomeFolder + "\\Desktop\\"; // Path to Desktop
@@ -387,81 +355,99 @@ public class SimulatedAnnealingSolver {
 //        String csvFilePath = "src/SA/simulated_annealing_results.csv";
         int problemIndex = 1; // Start with 1 for naming files distinctly
 
+//        String filePath = "outputRuns.txt";
+//        FileWriter writer = new FileWriter(filePath);
+//        ArrayList binRuns = new ArrayList();
+
+
         int instance = 1;
         for (problemInstance problem : problems) {
-            System.out.println("--------------------------------------------------------------------------------------------------");
-            System.out.println("Problem Instance "+ instance );
-            if (problem != null) {
-                double initialTemp = 100.0; // Example initial temperature
-                double finalTemp = 10; // Example final temperature
-                double cool = 0.7; // Slightly adjusted cooling rate for more gradual cooling
-                int templength = 50; // Example temperature length
-                int tempCount = 0;
-                // Instantiate the solver with the current problem instance
-                SimulatedAnnealingSolver solver = new SimulatedAnnealingSolver(problem, initialTemp, finalTemp, cool, templength);
 
-                // Distribute items into sets and generate initial solution
-                solver.distributeItemsIntoSets();
-                solver.generateinitsol();
-                solver.printSets();
-                System.out.println("\n\nInitial Solution:");
-                solver.printSolution();
-                solver.improvementFlag = false; // Initialize improvement flag
-                solver.noImprovementCount = 0;
+            //running the following 30 times
+//            for (int run = 0; run < 30; run++) {
+//                System.out.println("run"+run);
+                System.out.println("--------------------------------------------------------------------------------------------------");
+                System.out.println("Problem Instance " + instance);
+                if (problem != null) {
+                    double initialTemp = 100.0; // Example initial temperature
+                    double finalTemp = 10; // Example final temperature
+                    double cool = 0.7; // Slightly adjusted cooling rate for more gradual cooling
+                    int templength = 50; // Example temperature length
+                    int tempCount = 0;
+                    // Instantiate the solver with the current problem instance
+                    SimulatedAnnealingSolver solver = new SimulatedAnnealingSolver(problem, initialTemp, finalTemp, cool, templength);
 
-                long startTime = System.nanoTime();
-                // Now perform simulated annealing with swap and evaluate steps
-                while (solver.temperature > solver.finalTemperature) {
-                    solver.improvementFlag = false; // Reset flag for each temperature level
+                    // Distribute items into sets and generate initial solution
+                    solver.distributeItemsIntoSets();
+                    solver.generateinitsol();
+                    solver.printSets();
+                    System.out.println("\n\nInitial Solution:");
+                    solver.printSolution();
+                    solver.improvementFlag = false; // Initialize improvement flag
+                    solver.noImprovementCount = 0;
 
-                    for (int i = 0; i < solver.tempLength; i++) {
-                        solver.performSwapAndEvaluate();
-                        solver.logDataPoint();
-                        if (solver.improvementFlag) {
-                            tempCount = 0; // Reset counter if improvement is found
+                    long startTime = System.nanoTime();
+                    // Now perform simulated annealing with swap and evaluate steps
+                    while (solver.temperature > solver.finalTemperature) {
+                        solver.improvementFlag = false; // Reset flag for each temperature level
+
+                        for (int i = 0; i < solver.tempLength; i++) {
+                            solver.performSwapAndEvaluate();
+                            solver.logDataPoint();
+                            if (solver.improvementFlag) {
+                                tempCount = 0; // Reset counter if improvement is found
 //                            System.out.println("Reset");
-                        } else {
-                            tempCount++;
-                            if (tempCount >= solver.tempLength) {
-                                System.out.println("Termination criteria met. No improvements for a full cycle at the current temperature.");
-                                break; // Exiting early as no improvement found
+                            } else {
+                                tempCount++;
+                                if (tempCount >= solver.tempLength) {
+                                    System.out.println("Termination criteria met. No improvements for a full cycle at the current temperature.");
+                                    break; // Exiting early as no improvement found
+                                }
                             }
                         }
-                    }
 
-                    // Cooling step
-                    if (!solver.improvementFlag) {
-                        solver.noImprovementCount++;
-                        if (solver.noImprovementCount >= solver.tempLength) {
-                            System.out.println("Termination criteria met. No improvements for " + solver.noImprovementCount + " consecutive cycles.");
-                            break;
+                        // Cooling step
+                        if (!solver.improvementFlag) {
+                            solver.noImprovementCount++;
+                            if (solver.noImprovementCount >= solver.tempLength) {
+                                System.out.println("Termination criteria met. No improvements for " + solver.noImprovementCount + " consecutive cycles.");
+                                break;
+                            }
+                        } else {
+                            solver.noImprovementCount = 0;
                         }
-                    } else {
-                        solver.noImprovementCount = 0;
+
+                        solver.temperature *= solver.coolingRate;
+                        System.out.println("Temperature cooled to: " + solver.temperature);
+                        tempCount = 0;
                     }
 
-                    solver.temperature *= solver.coolingRate;
-                    System.out.println("Temperature cooled to: " + solver.temperature);
-                    tempCount = 0;
-                }
-
-                long endTime = System.nanoTime(); // Record end time
-                long executionTime = endTime - startTime;
-                // Final solution
-                System.out.println("\nFinal Solution:");
+                    long endTime = System.nanoTime(); // Record end time
+                    long executionTime = endTime - startTime;
+                    // Final solution
+                    System.out.println("\nFinal Solution:");
 //                solver.printSolution();
-                solver.printBestSolution();
+                int avg = solver.printBestSolution();
 //                solver.outputData();
 
-                // Write CSV for the current problem instance
+                    // Write CSV for the current problem instance
 //                solver.writeDataToCSV(csvFilePath, problemIndex);
-                problemIndex++;
+                    problemIndex++;
 
-                System.out.println("Time taken for algorithm execution: " + executionTime + " nanoseconds.");
-                System.out.println("--------------------------------------------------------------------------------------------------\n");
-                instance++;
-            }
+                    System.out.println("Time taken for algorithm execution: " + executionTime + " nanoseconds.");
+                    System.out.println("--------------------------------------------------------------------------------------------------\n");
 
+
+                    //adding to the problem instances bin array which stores the number of bins for 30 runs
+//                    binRuns.add(bin_num-1);
+                }
+            instance++;
+//            }
+////            printing 30 bin packings after 30 runs
+//            System.out.println(problem.problemInstanceName+binRuns);
+//            writer.write(problem.problemInstanceName+"\n"+binRuns + "\n");
+//            binRuns.clear();
         }
+//        writer.close();
     }
 }

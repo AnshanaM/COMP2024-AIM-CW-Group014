@@ -1,19 +1,27 @@
 package SA;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class InitialSolutionGenerator {
     private List<Bin> bins;
     private List<List<Item>> sets;
     private problemInstance problem;
+    private Random random;
 
     public InitialSolutionGenerator(List<Bin> bins, List<List<Item>> sets, problemInstance problem) {
         this.bins = bins;
         this.sets = sets;
         this.problem = problem;
+        this.random = new Random();
     }
 
     public void generate() {
         bins.clear(); // Clear existing bins
+
+        for (List<Item> set : sets) {
+            Collections.shuffle(set, random);
+        }
 
         int[] nextItemIndexPerSet = new int[sets.size()];
         boolean itemsRemaining = true;
@@ -26,6 +34,8 @@ public class InitialSolutionGenerator {
                 if (nextItemIndexPerSet[i] < sets.get(i).size()) {
                     Item item = sets.get(i).get(nextItemIndexPerSet[i]);
                     boolean itemPlaced = false;
+
+
 
                     for (Bin bin : bins) {
                         if (bin.canAddItem(item.getWeight()) && bin.canAcceptItemFromSet(i)) {
