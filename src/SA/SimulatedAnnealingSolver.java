@@ -428,7 +428,7 @@ public class SimulatedAnnealingSolver {
                     long endTime = System.nanoTime(); // Record end time
                     long executionTime = endTime - startTime;
                     // Final solution
-                    System.out.println("\nFinal Solution:");
+                    System.out.println("\n");
 //                solver.printSolution();
                 int avg = solver.printBestSolution();
 //                solver.outputData();
