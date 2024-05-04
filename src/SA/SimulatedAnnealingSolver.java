@@ -2,6 +2,7 @@ package SA;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -353,16 +354,18 @@ public class SimulatedAnnealingSolver {
 //        String csvFileName = "simulated_annealing_results.csv"; // The name of the CSV file
 //        String csvFilePath = desktopPath + csvFileName;
 //        String csvFilePath = "src/SA/simulated_annealing_results.csv";
+
         int problemIndex = 1; // Start with 1 for naming files distinctly
 
 //        String filePath = "outputRuns.txt";
 //        FileWriter writer = new FileWriter(filePath);
 //        ArrayList binRuns = new ArrayList();
 
+//        ArrayList avgTime = new ArrayList<>();
 
         int instance = 1;
         for (problemInstance problem : problems) {
-
+//            int sumTime = 0;
             //running the following 30 times
 //            for (int run = 0; run < 30; run++) {
 //                System.out.println("run"+run);
@@ -435,19 +438,23 @@ public class SimulatedAnnealingSolver {
                     problemIndex++;
 
                     System.out.println("Time taken for algorithm execution: " + executionTime + " nanoseconds.");
+//                    sumTime+=executionTime;
                     System.out.println("--------------------------------------------------------------------------------------------------\n");
 
 
                     //adding to the problem instances bin array which stores the number of bins for 30 runs
 //                    binRuns.add(bin_num-1);
                 }
-            instance++;
-//            }
+//                System.out.println("Average Time: "+((double)sumTime/30));
+                instance++;
+            }
+//            avgTime.add(((double)sumTime/30));
 ////            printing 30 bin packings after 30 runs
 //            System.out.println(problem.problemInstanceName+binRuns);
 //            writer.write(problem.problemInstanceName+"\n"+binRuns + "\n");
 //            binRuns.clear();
-        }
+//        }
+//        System.out.println("avgtime: "+avgTime);
 //        writer.close();
     }
 }

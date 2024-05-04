@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="added timer in nanoseconds">
+    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="added cost function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ACO/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ACO/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GGACGT/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GGACGT/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GGACGT/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GGACGT/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MBS/Bin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MBS/Bin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MBS/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MBS/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SA/InitialSolutionGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SA/InitialSolutionGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714751583535</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added cost function">
+      <option name="closed" value="true" />
+      <created>1714830354160</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714830354162</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +156,7 @@
     <MESSAGE value="added and checked ACO" />
     <MESSAGE value="renamed main folder" />
     <MESSAGE value="added timer in nanoseconds" />
-    <option name="LAST_COMMIT_MESSAGE" value="added timer in nanoseconds" />
+    <MESSAGE value="added cost function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added cost function" />
   </component>
 </project>

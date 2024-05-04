@@ -15,9 +15,10 @@ public class Main {
 //        ArrayList binRuns = new ArrayList();
         int probNum = 5; // can be either 0, 1, 2, 3 or 4
 
+        ArrayList avgTime = new ArrayList<>();
 
         for (int instance = 0; instance < probNum; instance++) {
-
+//            int sumTime = 0;
             //running the following 30 times
 //            for (int run = 0; run < 30; run++) {
 
@@ -384,16 +385,24 @@ public class Main {
                 System.out.println("Final Best Solution for instance " + (instance + 1) + ": ");
                 int bin_num = best_Solution.printSolutionInfo();
                 System.out.println("Time taken for packing: " + executionTime + " nanoseconds.");
+//                sumTime+=executionTime;
+
                 //adding to the problem instances bin array which stores the number of bins for 30 runs
 //                binRuns.add(bin_num);
+
             }
+
+//            System.out.println("Average Time: "+((double)sumTime/30));
+//            avgTime.add(((double)sumTime/30));
+
             //printing 30 bin packings after 30 runs
 //            System.out.println("instance "+(instance+1)+binRuns);
 //            writer.write("instance "+(instance+1)+"\n"+binRuns + "\n");
 //            binRuns.clear();
-        }
+//        }
+//        System.out.println("avgtime: "+avgTime);
 //        writer.close();
-//    }
+    }
 
 }
 

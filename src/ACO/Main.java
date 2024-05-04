@@ -41,11 +41,12 @@ public class Main extends ReadFile {
 //        ArrayList binRuns = new ArrayList();
 
         double averageCost = 0;
+//        ArrayList avgTime = new ArrayList<>();
 
         //looping through every problem instance in our Problem Array
         //essentially a forEach loop
         for (problemInstance problem : problemArray) {
-
+//            int sumTime = 0;
             //running the following 30 times
 //            for (int run = 0; run < 30; run++) {
 
@@ -104,17 +105,24 @@ public class Main extends ReadFile {
                 averageCost += (sum/bins.size());
 
                 System.out.println("Time taken for packing: " + executionTime + " nanoseconds.\n");
+//                sumTime+=executionTime;
+
                 //adding to the problem instances bin array which stores the number of bins for 30 runs
 //                binRuns.add(numberOfBins);
-//            }
+            }
+
+//            System.out.println("Average Time: "+((double)sumTime/30));
+//            avgTime.add(((double)sumTime/30));
+
             //printing 30 bin packings after 30 runs
 //            System.out.println("instance "+(problem.problemInstanceName)+binRuns);
 //            writer.write("instance "+(problem.problemInstanceName)+"\n"+binRuns + "\n");
 //            binRuns.clear();
           //end of problemInstance for loop
-        }
+//        }
 
         System.out.println("Average Cost: "+(averageCost/5));
+//        System.out.println("avgtime: "+avgTime);
 
 //        writer.close();
       //end of main method
