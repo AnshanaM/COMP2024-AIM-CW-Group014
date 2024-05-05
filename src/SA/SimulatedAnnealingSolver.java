@@ -372,10 +372,10 @@ public class SimulatedAnnealingSolver {
                 System.out.println("--------------------------------------------------------------------------------------------------");
                 System.out.println("Problem Instance " + instance);
                 if (problem != null) {
-                    double initialTemp = 100.0; // Example initial temperature
+                    double initialTemp = 1000.0; // Example initial temperature
                     double finalTemp = 10; // Example final temperature
-                    double cool = 0.7; // Slightly adjusted cooling rate for more gradual cooling
-                    int templength = 50; // Example temperature length
+                    double cool = 0.9; // Slightly adjusted cooling rate for more gradual cooling
+                    int templength = 200; // Example temperature length
                     int tempCount = 0;
                     // Instantiate the solver with the current problem instance
                     SimulatedAnnealingSolver solver = new SimulatedAnnealingSolver(problem, initialTemp, finalTemp, cool, templength);
