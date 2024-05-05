@@ -1,5 +1,7 @@
 package MBS;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Scanner;
 
@@ -11,10 +13,11 @@ import java.util.Scanner;
 //    2027         1
 
 public class ReadFile {
-    public static ProblemInstance[] readFile() {
+    public static ProblemInstance[] readFile() throws FileNotFoundException {
         ProblemInstance[] problemArray = new ProblemInstance[5];
         int problemInstanceNumber = -1;
-        InputStream problemInstancesFile = ReadFile.class.getResourceAsStream("/BPP.txt");
+//        InputStream problemInstancesFile = ReadFile.class.getResourceAsStream("/BPP.txt");
+        File problemInstancesFile = new File("src/BPP.txt");
         Scanner myReader = new Scanner(problemInstancesFile);
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();

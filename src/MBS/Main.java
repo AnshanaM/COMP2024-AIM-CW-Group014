@@ -1,5 +1,6 @@
 package MBS;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /** Java Implementation of MBS (Minimum Bin Slack) algorithm for solving the 1D BPP (Bin Packing Problem)
@@ -22,7 +23,7 @@ public class Main {
 
     static final int TOTAL_PROBLEM_INSTANCES = 5;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         System.out.println("\n***************************************************************************");
         System.out.println("One-Dimensional Bin Packing Problem");
         System.out.println("Minimum Bin Slack Algorithm");
