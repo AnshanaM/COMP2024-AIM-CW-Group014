@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="added average time calculation for 30 runs">
+    <list default="true" id="3ebaa7d5-0d4a-4b5e-9f3b-a7d8ae93daae" name="Changes" comment="print statement removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SA/SimulatedAnnealingSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ACO/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ACO/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714832651618</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="print statement removed">
+      <option name="closed" value="true" />
+      <created>1714840404894</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714840404896</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +171,7 @@
     <MESSAGE value="added timer in nanoseconds" />
     <MESSAGE value="added cost function" />
     <MESSAGE value="added average time calculation for 30 runs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added average time calculation for 30 runs" />
+    <MESSAGE value="print statement removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="print statement removed" />
   </component>
 </project>
