@@ -173,7 +173,7 @@ class BinPackingACO {
   //defines the evaporation rate
     private double evaporationRate = 0.5;
   //defines the pheromone constant
-    private double pheromoneConstant = 0.5;
+    private double pheromoneConstant = 0.1;
 
 
   //the contstructor of the BInPackingACO class, which takes all necessary data pertaining to a problem instance to generate a solution
