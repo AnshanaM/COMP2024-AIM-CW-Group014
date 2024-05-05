@@ -7,7 +7,7 @@ implemented in Java and compiled using the IntelliJ IDE.
 
 ## Prerequisites
 Create a new IntelliJ Project named "COMP2024-CW-Group014".
-Place the ACO, GGACGT, MBS and SA package directories from the submitted folder into the new project's **src** folder.
+Place the ACO, GGACGT, MBS and SA package directories and the BPP.txt from the submitted folder into the new project's **src** folder.
 
 Before running any of the algorithms implemented, ensure the following project directory is maintained.
 
